@@ -36,7 +36,7 @@ permissions:
 
 jobs:
   validate-and-update:
-    runs-on: ubuntu-latest
+    runs-on: ubicloud-standard-2
     
     steps:
       - name: Get PR details (for manual runs)

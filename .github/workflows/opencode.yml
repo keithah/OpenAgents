@@ -11,7 +11,7 @@ jobs:
        contains(github.event.comment.body, '/opencode')) &&
       (github.event.comment.author_association == 'OWNER' ||
        github.event.comment.author_association == 'MEMBER')
-    runs-on: ubuntu-latest
+    runs-on: ubicloud-standard-2
     permissions:
       id-token: write
       contents: write
