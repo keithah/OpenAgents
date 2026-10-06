@@ -18,7 +18,7 @@ permissions:
 jobs:
   check-trigger:
     name: Check if Version Bump Needed
-    runs-on: ubuntu-latest
+    runs-on: ubicloud-standard-2
     outputs:
       should_bump: ${{ steps.check.outputs.should_bump }}
       bump_type: ${{ steps.check.outputs.bump_type }}
@@ -98,7 +98,7 @@ jobs:
 
   create-version-bump-pr:
     name: Create Version Bump PR
-    runs-on: ubuntu-latest
+    runs-on: ubicloud-standard-2
     needs: check-trigger
     if: |
       needs.check-trigger.outputs.should_bump == 'true' &&

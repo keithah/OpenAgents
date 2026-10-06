@@ -8,7 +8,7 @@ on:
 jobs:
   pr-title-check:
     name: Validate PR Title
-    runs-on: ubuntu-latest
+    runs-on: ubicloud-standard-2
     outputs:
       title-valid: ${{ steps.validate.outputs.valid }}
     
@@ -156,7 +156,7 @@ jobs:
 
   check-changes:
     name: Detect Changed Files
-    runs-on: ubuntu-latest
+    runs-on: ubicloud-standard-2
     needs: pr-title-check
     if: needs.pr-title-check.outputs.title-valid == 'true'
     outputs:
@@ -209,7 +209,7 @@ jobs:
 
   build-check:
     name: Build & Validate
-    runs-on: ubuntu-latest
+    runs-on: ubicloud-standard-2
     timeout-minutes: 5
     needs: [pr-title-check, check-changes]
     if: |
@@ -263,7 +263,7 @@ jobs:
 
   summary:
     name: PR Checks Summary
-    runs-on: ubuntu-latest
+    runs-on: ubicloud-standard-2
     needs: [pr-title-check, check-changes, build-check]
     if: always()
     

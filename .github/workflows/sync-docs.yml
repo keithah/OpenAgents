@@ -25,7 +25,7 @@ permissions:
 jobs:
   check-sync-needed:
     name: Check if Docs Need Sync
-    runs-on: ubuntu-latest
+    runs-on: ubicloud-standard-2
     outputs:
       needs_sync: ${{ steps.check.outputs.needs_sync }}
       changes_detected: ${{ steps.check.outputs.changes_detected }}
@@ -78,7 +78,7 @@ jobs:
 
   sync-documentation:
     name: Sync Documentation with OpenCode
-    runs-on: ubuntu-latest
+    runs-on: ubicloud-standard-2
     needs: check-sync-needed
     if: needs.check-sync-needed.outputs.needs_sync == 'true'
     outputs:
@@ -189,7 +189,7 @@ jobs:
   
   cleanup-on-failure:
     name: Cleanup on Failure
-    runs-on: ubuntu-latest
+    runs-on: ubicloud-standard-2
     needs: [check-sync-needed, sync-documentation]
     if: failure()
     
