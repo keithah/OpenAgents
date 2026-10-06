@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+## [0.5.2] - 2026-10-06
+
+### Changes
+- Merge pull request #7 from keithah/ci/ubicloud-tenki-runners
+
 ## [0.5.0] - 2025-12-18
 
 ### Changes
